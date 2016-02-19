@@ -18,7 +18,7 @@ Please note that the brackets are unbalanced on purpose.
     var hash = "{firstKey:value0, key:[[value_1, value_2],[value_3, value4]], 5:10:00AM]}";
 
 	function hashify(jsonString) {
-    		s = jsonString.replace(/(\s*?{\s*?|\s*?,\s*?)(['"])?([a-zA-Z0-9]+)(['"])?:/g, '$1"$3":'); //Add quotes for keys
+    	s = jsonString.replace(/(\s*?{\s*?|\s*?,\s*?)(['"])?([a-zA-Z0-9]+)(['"])?:/g, '$1"$3":'); //Add quotes for keys
   		s = s.replace(/(\d\d\:\d\d\w\w)\]/, '$1'); //remove trailing brackets.
   		s = s.replace(/:((?:(?![\["]).)[A-z0-9:]+)/g, ':"$1"'); //add quotes to every value except an array value
   		s = s.replace(/([a-z0-9+_]+?(?=[ \],]))/g, '"$1"'); //add quotes to every array value
@@ -81,4 +81,4 @@ and then
        		}
         }
 
-    	var sampleObj = new Sample({"this":[1,2,3,4,5,6], "that":['here', 'there', 'everywhere'], "other": 'here'});
+    var sampleObj = new Sample({"this":[1,2,3,4,5,6], "that":['here', 'there', 'everywhere'], "other": 'here'});
